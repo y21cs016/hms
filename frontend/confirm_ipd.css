@@ -1,0 +1,87 @@
+/* confirm_ipd.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:powderblue;
+    margin: 0;
+    padding: 1px;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    
+    color: #070707;
+}
+
+form#confirmForm {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+form#confirmForm label {
+    display: block;
+    font-weight:630;
+    margin-bottom: 6px;
+    color: #222;
+    width: 150 px;
+}
+
+form#confirmForm label span {
+    font-weight: 400;
+    color: #222;
+    
+}
+
+form#confirmForm select,
+form#confirmForm input[type="submit"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1.5px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+form#confirmForm select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+form#confirmForm input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+form#confirmForm input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+form#confirmForm input[type="submit"]:active {
+    background-color: #1c5980;
+}
+
+/* Spacing for label + select/input group */
+form#confirmForm label + select,
+form#confirmForm label + input[type="submit"] {
+    margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    form#confirmForm {
+        padding: 20px 15px;
+    }
+}

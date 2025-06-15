@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient History</title>
+  <link rel="stylesheet" href="history.css">
+</head>
+<body>
+  <h1>Patient History Lookup</h1>
+
+<div class="search-form">
+  <div class="search-grid">
+    <!-- Labels Row -->
+    <div>
+      <label for="uqid">UQID</label>
+    </div>
+    <div>
+      <label for="name">Name</label>
+    </div>
+    <div>
+      <label for="phone">Phone</label>
+    </div>
+    <div>
+      <label for="address">Address</label>
+    </div>
+
+    <!-- Inputs Row -->
+    <div>
+      <input type="text" id="uqid" placeholder="Enter UQID">
+    </div>
+    <div>
+      <input type="text" id="name" placeholder="Enter Name">
+    </div>
+    <div>
+      <input type="text" id="phone" placeholder="Enter Phone">
+    </div>
+    <div>
+      <input type="text" id="address" placeholder="Enter Address">
+    </div>
+  </div>
+
+  <div class="button-row">
+    <button onclick="searchPatient()">Search</button>
+    <button onclick="resetFields()">Reset</button>
+  </div>
+</div>
+
+<div id="patient-info" class="section"></div>
+<div id="opd-history" class="section"></div>
+<div id="lab-reports" class="section"></div>
+<div id="prescription-history" class="section"></div>
+<div id="ipd-history" class="section"></div>
+
+
+
+<script src="history.js"></script>
+
+</body>
+</html>

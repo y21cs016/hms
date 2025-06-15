@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPD Data</title>
+    <link rel="stylesheet" href="ipd_data.css">
+</head>
+<body>
+    <h1>IPD Booking List</h1>
+
+
+    <div class="form-group">
+        <!-- Row 1: Name & UQID -->
+        <div class="form-row">
+            <div class="input-box">
+                <label for="searchipd_id">IPD_ID</label>
+                <input type="text" id="searchipd_id" placeholder="Enter IPD_ID">
+            </div>
+    
+            <div class="input-box">
+                <label for="searchUqid">UQID</label>
+                <input type="text" id="searchUqid" placeholder="Enter UQID">
+            </div>
+            <div class="input-box">
+                <label for="searchPatient">Patinet Name</label>
+                <input type="text" id="searchPatient" placeholder="Enter patient name">
+            </div>
+            
+
+        </div>
+    
+        <!-- Row 2: Phone, From, To, Refresh -->
+        <div class="form-row">
+            
+            <div class="input-box">
+                <label for="searchdepartment">Department</label>
+                <input type="text" id="searchdepartment" placeholder="Enter Department Name">
+            </div>
+            <div class="input-box">
+                <label for="searchRoomNo">Room No</label>
+                <input type="text" id="searchRoomNo" placeholder="Enter Room No">
+            </div>
+            
+    
+            <div class="input-box">
+                <label for="fromDate">From</label>
+                <input type="date" id="fromDate">
+            </div>
+    
+            <div class="input-box">
+                <label for="toDate">To</label>
+                <input type="date" id="toDate">
+            </div>
+    
+            <div class="input-box">
+                <button id="refreshBtn" onclick="location.reload()">Refresh</button>
+            </div>
+        </div>
+    </div>
+    <table id="ipdDataTable">
+        <thead>
+            <tr>
+                <th>IPD ID</th>
+                <th>UQID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Disease</th>
+                <th>Department</th>
+                <th>Doctor</th>
+                <th>Company Status</th>
+                <th>Confirmation Date</th>
+                <th>Room Type</th>
+                <th>Room No</th>
+                <th>Bed No</th>
+                <th>Action</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dynamic data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script src="ipd_data.js"></script>
+</body>
+</html>

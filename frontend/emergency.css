@@ -1,0 +1,88 @@
+/* emergency.css */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: powderblue;
+    margin: 0;
+    padding: 1px;
+    color: #222;
+}
+
+.container {
+    max-width: 520px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+form#emergencyForm {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #222;
+    width:150px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 1.8px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+button[type="submit"] {
+    padding: 12px 0;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #1f5d8b;
+}
+
+button[type="submit"]:active {
+    background-color: #154a6f;
+}
+
+/* For smaller screens */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 25px;
+        margin: 20px;
+    }
+}

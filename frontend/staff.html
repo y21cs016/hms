@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Staff Management</title>
+  <link rel="stylesheet" href="staff.css" />
+</head>
+<body>
+
+<h1>STAFF MANAGEMENT</h1>
+
+<!-- Top Buttons -->
+<div class="top-bar">
+  <button onclick="window.location.href='staff_registration.html'">Register</button>
+  <button onclick="window.location.href='staff_login.html'">Login</button>
+</div>
+
+<!-- From Date -->
+<div class="input-box">
+  <label for="fromDate">From</label>
+  <input type="date" id="fromDate" />
+</div>
+
+<!-- To Date -->
+<div class="input-box">
+  <label for="toDate">To</label>
+  <input type="date" id="toDate" />
+</div>
+
+<!-- Specialization Dropdown -->
+<label for="specialization">Specialization:</label>
+<select id="specialization" name="specialization">
+  <option value="all">-- All Specializations --</option>
+  <option value="Cardiology">Cardiology</option>           
+            <option value="Dermatology">Dermatology</option>        
+            <option value="Dentistry">Dentistry</option>             
+            <option value="Endocrinology">Endocrinology</option>     
+            <option value="ENT">ENT</option>                         
+            <option value="Gastroenterology">Gastroenterology</option> 
+            <option value="General Medicine">General Medicine</option> 
+            <option value="Gynecology">Gynecology</option>           
+            <option value="Neurology">Neurology</option>            
+            <option value="Nephrology">Nephrology</option>         
+            <option value="Ophthalmology">Ophthalmology</option>     
+            <option value="Orthopedics">Orthopedics</option>        
+            <option value="Pediatrics">Pediatrics</option>           
+            <option value="Psychiatry">Psychiatry</option>           
+            <option value="Pulmonology">Pulmonology</option>         
+            <option value="Rheumatology">Rheumatology</option>       
+            <option value="Urology">Urology</option>
+</select>
+
+<!-- Export Buttons Panel -->
+<div class="photo-actions-container">
+  <img src="download_logo.jpg" class="photo-icon" onclick="toggleButtons()" alt="Toggle Buttons" />
+  <div class="button-slide-panel" id="slideButtons">
+    <button onclick="exportStaffRange('excel')">Export as Excel</button>
+    <button onclick="exportStaffRange('csv')">Export as CSV</button>
+    <button onclick="exportStaffRange('pdf')">Export as PDF</button>
+  </div>
+</div>
+<div id="editFormContainer" style="display:none; background:#f8f8f8; padding:15px; border:1px solid #ccc; margin:10px 0;">
+    <h3>Edit Staff</h3>
+    <form id="editForm">
+        <input type="hidden" id="editStaffId" />
+        <label>Name: <input type="text" id="editStaffName" required></label><br>
+      
+        <label for="specialization">Specialization:</label>
+<select id="editSpecialization" name="specialization">
+  <option value="all">-- All Specializations --</option>
+  <option value="Cardiology">Cardiology</option>           
+            <option value="Dermatology">Dermatology</option>        
+            <option value="Dentistry">Dentistry</option>             
+            <option value="Endocrinology">Endocrinology</option>     
+            <option value="ENT">ENT</option>                         
+            <option value="Gastroenterology">Gastroenterology</option> 
+            <option value="General Medicine">General Medicine</option> 
+            <option value="Gynecology">Gynecology</option>           
+            <option value="Neurology">Neurology</option>            
+            <option value="Nephrology">Nephrology</option>         
+            <option value="Ophthalmology">Ophthalmology</option>     
+            <option value="Orthopedics">Orthopedics</option>        
+            <option value="Pediatrics">Pediatrics</option>           
+            <option value="Psychiatry">Psychiatry</option>           
+            <option value="Pulmonology">Pulmonology</option>         
+            <option value="Rheumatology">Rheumatology</option>       
+            <option value="Urology">Urology</option>
+</select>
+        <label>Age: <input type="number" id="editAge"></label><br>
+        <label>Address: <input type="text" id="editAddress"></label><br>
+        <label>Mobile: <input type="text" id="editMobile"></label><br>
+        <label>Status: <input type="text" id="editStatus"></label><br>
+        <div style="display: flex; justify-content: space-between; gap: 10px;">
+            <button type="submit">Update Staff</button>
+            <button type="button" onclick="cancelEdit()">Cancel</button>
+        </div>
+
+    </form>
+</div>
+
+
+<!-- Staff Table -->
+<table id="staffTable">
+  <thead>
+    <tr>
+      <th>Staff ID</th>
+      <th>Staff Name</th>
+      <th>Specialization</th>
+      <th>Age</th>
+      <th>Address</th>
+      <th>Mobile Number</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Dynamic Data from MySQL -->
+  </tbody>
+</table>
+
+<script src="staff.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lab - Pathology Records</title>
+  <script src="lab.js" defer></script>
+  <link rel="stylesheet" href="lab.css">
+</head>
+<body>
+  <h1>Pathology List</h1>
+
+  <div id="filterSection">
+    <!-- Row 1 -->
+    <div class="filter-row">
+      <div class="filter-group">
+        <label for="searchUqid">UQID</label>
+        <input type="text" id="searchUqid" placeholder="Search by UQID" />
+      </div>
+      <div class="filter-group">
+        <label for="searchName">Patient Name</label>
+        <input type="text" id="searchName" placeholder="Search by Name" />
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="filter-row">
+      <div class="filter-group">
+        <label for="searchDisease">Disease</label>
+        <input type="text" id="searchDisease" placeholder="Search by Disease" />
+      </div>
+      <div class="filter-group">
+        <label for="searchTest">Test</label>
+        <input type="text" id="searchTest" placeholder="Search by Test" />
+      </div>
+      <div class="filter-group">
+        <label for="fromDate">From Date</label>
+        <input type="date" id="fromDate" />
+      </div>
+      <div class="filter-group">
+        <label for="toDate">To Date</label>
+        <input type="date" id="toDate" />
+      </div>
+      <button id="refreshBtn">Refresh</button>
+    </div>
+  </div>
+
+  <div id="errorMessage"></div>
+
+  <table id="pathologyTable" border="1">
+    <thead>
+      <tr>
+        <th>UQID</th>
+        <th>Name</th>
+        <th>Disease</th>
+        <th>Doctor</th>
+        <th>Tests</th>
+         <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="pathologyContainer">
+      <!-- Records will be inserted here -->
+    </tbody>
+  </table>
+</body>
+</html>

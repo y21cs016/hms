@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  overflow: auto; /* ensure scroll works */
+  
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE 10+ */
+  -ms-overflow-style: none;
+}
+
+/* Chrome, Safari, Edge (WebKit browsers) */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+  h1 {
+    color: black;
+  }
+  
+  /* Wrapper for charts side-by-side */
+  .charts-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* space between the charts */
+    margin-top: 40px;
+    flex-wrap: wrap; /* responsive for small screens */
+    margin-bottom: 40px;
+  }
+  
+  /* Card styling for each chart */
+  .chart-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    width: 500px; /* increase the width */
+    height: 500px; /* increase the height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .chart-card canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .patient-count {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .buttons button {
+    padding: 15px 25px;
+    font-size: 18px;
+    margin: 10px;
+    border: none;
+    background-color: #005f73;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .buttons button:hover {
+    background-color: #144751;
+  }
+  .pharmacy-stock-container {
+    margin-left: 500px;  /* Adjust this value to add left margin */
+  }

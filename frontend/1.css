@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+
+    padding-top: 100px;
+    background: #f0f8ff;
+    gap: 22px; /* Adds spacing between left and right sections */
+    
+}
+
+
+.left {
+    width: 17.5%;
+    background: powderblue;
+    color: black;
+    padding: 20px;
+    padding-top: 20px;
+    border: none;
+    border-radius: 10px;
+    height: calc(100vh - 80px); /* Ensures it fits within screen */
+    overflow-y: auto;
+    box-shadow: 0px 4px 10px rgba(176,224,230,0.7);
+    
+}
+
+
+.left ul {
+    list-style: none;
+}
+
+.left ul li {
+    padding: 12px;
+    cursor: pointer;
+    text-align: left;
+    font-weight: bold;
+    border: 0.1 px solid rgb(90, 179, 197);
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.left ul li:hover {
+    background: #444;
+    color: white;
+}
+
+.right {
+    width: 82.5%; /* Adjusted for spacing */
+    padding: 20px;
+    background: powderblue;
+    border: 2px solid white;
+    border-radius: 10px;
+    height: calc(100vh - 80px); /* Prevents scrolling issue */
+    overflow:hidden;
+}
+
+/* iFrame */
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.left, .right {
+    margin-top: 31px; /* Adds space below the header */
+
+}
+.icon {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+.left ul li {
+    display: flex;              /* Put icon + text in same row */
+    align-items: center;        /* Vertically center */
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    border: 0.1px solid rgb(90, 179, 197);
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.left ul li:hover {
+    background: #444;
+    color: white;
+}
+
+
+
+.icon {
+    font-size: 20px;
+    color: #333;
+    margin-right: 0.5px; /* Reduced from 8px */
+}
+
+.left ul li:hover .icon {
+    color: white; /* Change the icon color to white when hovering */
+}
+.has-dropdown {
+    position: relative;
+}
+
+.main-menu {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    border: 0.1px solid rgb(90, 179, 197);
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.main-menu:hover {
+    background: #444;
+    color: white;
+}
+
+.dropdown {
+    list-style: none;
+    padding-left: 20px;
+    display: none; /* Initially hidden */
+    margin-top: 5px;
+}
+
+.dropdown li {
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    border: 0.1px solid #a3d2ca;
+    margin: 3px 0;
+    border-radius: 5px;
+    background: #e0ffff;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown li:hover {
+    background: #4CAF50;
+    color: white;
+}
+.submenu {
+    display: none;
+    list-style: none;
+    padding-left: 25px; /* Indent for subfields */
+    margin-top: 5px;
+}
+
+.submenu li {
+    font-weight: normal;
+    font-size: 16px;
+    padding: 8px;
+    background: #e0ffff;
+    margin: 3px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.submenu li:hover {
+    background: #5f9ea0;
+    color: white;
+}
+
+/* Arrow indicator for dropdown fields */
+.has-submenu::after {
+    content: ' ▼';
+    float: right;
+    font-size: 12px;
+}
+
+.has-submenu.active::after {
+    content: ' ▲'; /* Change to upward arrow when expanded */
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital MANAGEMENT SYSTEM</title>
+    <link rel="stylesheet" href="1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<div id="header-container"></div>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header-container').innerHTML = data);
+</script>
+<body>
+    <div class="left">
+        <br><h2>HMS Catalogue</h2><br>
+        <ul>
+            <li onclick="showContent('home.html')">
+                <div class="icon-circle"><i class="fas fa-home icon"></i></div> Home
+            </li>
+            <li onclick="showContent('about.html')">
+                <div class="icon-circle"><i class="fas fa-info-circle icon"></i></div> About
+            </li>
+            <li onclick="showContent('new-patient.html')">
+                <div class="icon-circle"><i class="fas fa-user-plus icon"></i></div> New Patient
+            </li>
+    
+            <!-- OPD Section -->
+            <li class="has-submenu" onclick="toggleSubmenu(this)">
+                <div class="icon-circle"><i class="fas fa-stethoscope icon"></i></div> OPD
+            </li>
+            <ul class="submenu">
+                <li onclick="showContent('opd-patient.html')">OPD_Booking</li>
+                <li onclick="showContent('doctor.html')">OPD_Booking List</li>
+            </ul>
+    
+            <!-- IPD Section -->
+            <li class="has-submenu" onclick="toggleSubmenu(this)">
+                <div class="icon-circle"><i class="fas fa-notes-medical icon"></i></div> IPD
+            </li>
+            <ul class="submenu">
+                <li onclick="showContent('ipd_booking.html')">IPDBooking</li>
+                <li onclick="showContent('ipd_data.html')">IPD Data</li>
+                <li onclick="showContent('emergency.html')">Emergency_IPD</li>
+            </ul>
+    
+            <!-- Staff Section -->
+            <li onclick="showContent('staff.html')">
+                <div class="icon-circle"><i class="fas fa-users icon"></i></div> Staff
+            </li>
+    
+            <!-- Lab Section -->
+            <li class="has-submenu" onclick="toggleSubmenu(this)">
+                <div class="icon-circle"><i class="fas fa-vials icon"></i></div> Lab
+            </li>
+            <ul class="submenu">
+                <li onclick="showContent('lab.html')">Pathology</li>
+                <li onclick="showContent('diagnostic_dock.html')">Diagnostic Dock</li>
+            </ul>
+    
+            <!-- Pharmacy Section -->
+            <li class="has-submenu" onclick="toggleSubmenu(this)">
+                <div class="icon-circle"><i class="fas fa-pills icon"></i></div> Pharmacy
+            </li>
+            <ul class="submenu">
+                <li onclick="showContent('pharmacy_inside.html')">Pharmacy Sales</li>
+                <li onclick="showContent('pharmacy_stock.html')">Pharmacy Purchase</li>
+            </ul>
+             <!-- History Section -->
+             <li onclick="showContent('history.html')">
+                <div class="icon-circle"><i class="fas fa-history icon"></i></div> Patient History
+            </li>
+        </ul>
+    </div>
+         
+    
+    <div class="right">
+        <iframe id="contentFrame" src="home.html" frameborder="0"></iframe>
+    </div>
+
+    <script src="1.js"></script>
+</body>
+</html>

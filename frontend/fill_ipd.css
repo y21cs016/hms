@@ -1,0 +1,100 @@
+/* General styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    margin-top: 20px;
+}
+
+/* Container for patient info section */
+#patient-info {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#patient-info p {
+    margin: 10px 0;
+}
+
+#patient-info strong {
+    color:rgb(7, 7, 58);
+}
+
+/* Basic fields styling */
+#basic-fields {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="text"], select {
+    width: 48%;
+    display: inline-block;
+    margin-right: 4%;
+}
+
+input[type="text"]:last-child, select:last-child {
+    margin-right: 0;
+}
+
+/* Styling for operation section */
+#operation-section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#operation-section label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#operationFields {
+    margin-top: 20px;
+}
+
+button[type="button"] {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px auto;
+}
+
+button[type="button"]:hover {
+    background-color: #45a049;
+}

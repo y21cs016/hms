@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#filterSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.filter-group input {
+  padding: 6px;
+  width: 180px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#refreshBtn {
+  height: 38px;
+  padding: 6px 12px;
+  margin-top: 22px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+#refreshBtn:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%; /* Ensure the table covers the full width */
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #050505;
+}
+
+th {
+  color: white;
+  background-color:green;
+}
+.fill-btn{
+  color:white;
+  background-color: green;
+  padding: 10px 8px;
+   
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.edit-btn{
+  color:white;
+  background-color: green;
+  padding: 10px 10px;
+   
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.status-cell {
+  text-align: center;
+  font-weight: bold;
+}
+
+.status-cell.Pending {
+  color: red;
+}
+
+.status-cell.Completed {
+  color: green;
+}

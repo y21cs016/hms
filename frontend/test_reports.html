@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Report Entry</title>
+    <link rel="stylesheet" href="test_reports.css">
+</head>
+<div class="print-header">
+    <h2 style="color: rgb(147, 36, 36);">Lloyds Kali Ammal Memorial Hospital</h2>
+    <p>Hedri, Etapalli, Dist. Gadchiroli, Maharashtra, Pin-12345</p>
+    <p>Phone: 123456789 | Email: lloyds@gmail.com</p>
+    <hr>
+</div>
+<body>
+    <h1 style="text-align: center;">Test Reports</h1>
+    <div class="main-container">
+        <div id="patientInfo" class="patient-grid"></div>
+
+        <!-- Form: this wraps dynamically generated test fields -->
+        <form id="reportForm"></form>
+
+        <div class="form-footer">
+            <button class="no-print" id="submitBtn" onclick="submitReports()">Submit Reports</button>
+            <button class="no-print" id="printBtn" onclick="window.print()">Print</button>
+
+
+        </div>
+    </div>
+
+    <script src="test_reports.js"></script>
+</body>
+
+
+</html>

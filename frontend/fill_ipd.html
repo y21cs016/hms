@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fill IPD Report</title>
+    <link rel="stylesheet" href="fill_ipd.css">
+</head>
+<body>
+    
+        <h1>Fill IPD Report</h1>
+
+        <div id="patient-info">
+            <p><strong>Name:</strong> <span id="name">John Doe</span></p>
+            <p><strong>Gender:</strong> <span id="gender">Male</span></p>
+            <p><strong>Age:</strong> <span id="age">45</span></p>
+            <p><strong>Phone:</strong> <span id="phone">1234567890</span></p>
+            <p><strong>Disease:</strong> <span id="disease">Hypertension</span></p>
+            <p><strong>Doctor:</strong> <span id="doctor">Dr. Smith</span></p>
+            <p><strong>Department:</strong> <span id="department">Cardiology</span></p>
+        </div>
+
+        <div id="basic-fields">
+            <label>Weight: <input type="text" id="weight"></label>
+            <label>BP: <input type="text" id="bp"></label>
+        </div>
+
+        <div id="operation-section">
+            <label>Operation Type:
+                <select id="operationType"></select>
+            </label>
+    
+            <div id="operationFields"></div>
+        </div>
+
+        <button type="button" onclick="submitReport()">Submit Report</button>
+
+
+    <script src="fill_ipd.js"></script>
+</body>
+
+</html>

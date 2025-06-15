@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+th {
+    background-color:green;
+}
+
+select {
+    padding: 8px;
+    font-size: 16px;
+}
+
+.working {
+    background-color: #d4edda;
+    color: green;
+    font-weight: bold;
+}
+
+.on-leave {
+    background-color: #f8d7da;
+    color: red;
+    font-weight: bold;
+}
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1000; /* Must be higher than the icon */
+  }
+  
+
+.top-bar button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC); /* Gradient from blue to teal */
+    transition: background 0.3s ease;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.top-bar button:hover {
+    background: linear-gradient(to right, #0041C2, #3754E0, #5FA5F0);
+}
+/* Container for the logo and buttons */
+.photo-actions-container {
+    position: fixed;
+    bottom: 500px;
+    right: 2px;
+    z-index: 999;
+  }
+  
+  /* Logo image */
+  .photo-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    margin-top: 250px;
+  }
+  
+  /* Button panel hidden initially */
+  .button-slide-panel {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+    margin-top: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: all 0.4s ease;
+  }
+  
+  /* When active, show the panel */
+  .button-slide-panel.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+  
+  /* Individual buttons */
+  .button-slide-panel button {
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .button-slide-panel button:hover {
+    background-color: #0056b3;
+  }
+  
+/* Label + Input in a row */
+.input-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Label styling */
+.input-box label {
+    font-weight: bold;
+    min-width: 60px;
+    text-align: right;
+}
+
+/* Input fields */
+.input-box input {
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    width: 200px;
+}
+/* Center Edit Form Container in Middle */
+#editFormContainer {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    z-index: 999;
+    
+}
+
+
+/* Edit Form Title */
+#editFormContainer h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form Styling */
+#editForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Label and Input Grouping */
+#editForm label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: #333;
+}
+
+#editForm label input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+}
+
+/* Buttons Styling */
+#editForm button {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#editForm button[type="submit"] {
+    background-color: #2ecc71;
+    color: white;
+    margin-top: 10px;
+}
+
+#editForm button[type="button"] {
+    background-color: #dc3545;
+    color: white;
+    margin-top: 10px;
+}
+
+/* Buttons Side-by-Side */
+#editForm button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 600px) {
+    #editFormContainer {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #editForm label {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #editForm label input {
+        width: 100%;
+    }
+}
+#specialization {
+  margin-bottom: 20px;
+  border: 2px solid powderblue;
+}
+button {
+    background-color: #269354;
+    color: black;
+    margin-top: 15px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px; /* this gives a small curved look */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patient Management</title>
+  <link rel="stylesheet" href="home.css">
+  <script src="home.js" defer></script>
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <h1>Welcome to the Patient Management System</h1>
+  
+  <div class="patient-count">
+    <h2>No. of new patients today: <span id="new-patient-count">0</span></h2>
+  </div>
+
+  <div class="buttons">
+    <button onclick="window.location.href='new-patient.html'">New Patient</button>
+    <button onclick="window.location.href='opd-patient.html'">Existing Patient</button>
+  </div>
+
+  <!-- Wrapper for side-by-side containers -->
+  <div class="charts-container">
+    <!-- Bar Chart Container -->
+    <div class="chart-card">
+      <canvas id="statsChart"></canvas>
+    </div>
+    
+     <!-- Pharmacy Stock Pie Chart -->
+     <div class="chart-card">
+      <canvas id="pharmacyStockChart"></canvas>
+    </div>
+    <!-- Pie Chart Container -->
+    <div class="chart-card">
+      <canvas id="diseaseChart"></canvas>
+    </div>
+    
+  </div>
+
+ 
+ 
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const today = new Date().toISOString().split('T')[0];
+      const newPatientCount = localStorage.getItem(today) || 0;
+      document.getElementById("new-patient-count").innerText = newPatientCount;
+
+      // Bar Chart
+      fetch('/api/stats')
+        .then(res => res.json())
+        .then(data => {
+          const ctx = document.getElementById('statsChart').getContext('2d');
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['Total Patients', 'OPD Bookings', 'IPD Bookings'],
+              datasets: [{
+                label: 'Hospital Stats',
+                data: [data.patients, data.opd, data.ipd],
+                backgroundColor: ['#7B68EE', '#36a2eb', '#ff6384'],
+                barThickness: 70
+              }]
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                legend: { display: false },
+                title: {
+                  display: true,
+                  text: 'Overall Patient Metrics'
+                }
+              }
+            }
+          });
+        })
+        .catch(err => console.error('Error fetching stats:', err));
+
+      // Pie Chart
+      fetch('/opd-bookings')
+        .then(res => res.json())
+        .then(bookings => {
+          const diseaseCount = {};
+          bookings.forEach(booking => {
+            const disease = booking.disease || "Unknown";
+            diseaseCount[disease] = (diseaseCount[disease] || 0) + 1;
+          });
+
+          const diseaseLabels = Object.keys(diseaseCount);
+          const diseaseData = Object.values(diseaseCount);
+
+          const colors = [
+            '#ff6384', '#36a2eb', '#cc65fe', '#ffce56', 
+            '#4bc0c0', '#9966ff', '#ff9f40', '#e7e9ed',
+            '#1E90FF', '#BA55D3', '#3CB371', '#FF6347', '#4682B4', '#DA70D6',
+          ];
+
+          const diseaseCtx = document.getElementById('diseaseChart').getContext('2d');
+          new Chart(diseaseCtx, {
+            type: 'doughnut',
+            data: {
+              labels: diseaseLabels,
+              datasets: [{
+                label: 'Disease Distribution',
+                data: diseaseData,
+                backgroundColor: colors,
+                borderWidth: 1
+              }]
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                title: {
+                  display: true,
+                  text: 'Disease Distribution Analysis'
+                }
+              }
+            }
+          });
+        })
+        .catch(err => console.error('Error fetching OPD bookings:', err));
+
+      // Pharmacy Stock Pie Chart
+      fetch('/getStock')
+        .then(res => res.json())
+        .then(stockData => {
+          const stockCount = {};
+          stockData.forEach(item => {
+            const productName = item.product_name || "Unknown";
+            stockCount[productName] = (stockCount[productName] || 0) + item.current_stock;
+          });
+
+          const productLabels = Object.keys(stockCount);
+          const productData = Object.values(stockCount);
+
+          const stockColors = [
+            '#ff6384', '#36a2eb', '#cc65fe', '#ffce56', 
+             '#A020F0', '#6A5ACD', '#4B0082', '#E6E6FA',
+            '#DA70D6', '#C71585', '#800080', '#9400D3',
+          ];
+
+          const stockCtx = document.getElementById('pharmacyStockChart').getContext('2d');
+          new Chart(stockCtx, {
+            type: 'pie',
+            data: {
+              labels: productLabels,
+              datasets: [{
+                label: 'Pharmacy Stock Distribution',
+                data: productData,
+                backgroundColor: stockColors,
+                borderWidth: 1
+              }]
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                title: {
+                  display: true,
+                  text: 'Pharmacy Stock Distribution'
+                }
+              }
+            }
+          });
+        })
+        .catch(err => console.error('Error fetching pharmacy stock data:', err));
+    });
+  </script>
+
+</body>
+</html>

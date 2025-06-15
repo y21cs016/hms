@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b0e0e6;
+    margin: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #002366;
+}
+
+/* Container for form groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Each row */
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+/* Input + Label container */
+.input-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-box label {
+    font-weight: bold;
+    min-width: 60px;
+    text-align: right;
+}
+
+.input-box input {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 180px;
+    font-size: 14px;
+}
+
+/* Buttons */
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color:green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#refreshBtn {
+    background-color: #2578e4;
+}
+
+/* Table Styling */
+#patientTableContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+th {
+    background-color: #006400;
+    color: white;
+}
+
+.action-btn {
+    padding: 5px 10px;
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+/* Container for the logo and buttons */
+.photo-actions-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    text-align: right;
+  }
+  
+  /* Logo image */
+  .photo-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+  }
+  
+  /* Button panel hidden initially */
+  .button-slide-panel {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+    margin-top: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: all 0.4s ease;
+  }
+  
+  /* When active, show the panel */
+  .button-slide-panel.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+  
+  /* Individual buttons */
+  .button-slide-panel button {
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .button-slide-panel button:hover {
+    background-color: #0056b3;
+  }

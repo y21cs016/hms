@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pharmacy Inside - Dispense Medicines</title>
+  <link rel="stylesheet" href="pharmacy_inside.css" />
+</head>
+<body>
+  <h1 style="text-align: center;">Pharmacy - Dispense Medicines</h1>
+
+  <!-- Patient Information and Dispense Medicines Form -->
+  <div class="form-wrapper">
+    <form id="dispenseForm">
+      <h2>Patient Information</h2>
+
+      <div class="form-container">
+        <div class="half-width">
+          <input type="text" id="patient_name" placeholder="Patient Name" required />
+          <input type="text" id="refer_by" placeholder="Referred By" required />
+        </div>
+        <div class="half-width">
+          <input type="text" id="reference_no" placeholder="Reference No" required />
+          <input type="text" id="checked_by" placeholder="Checked By" required />
+          <input type="date" id="dispense_date" required />
+        </div>
+      </div>
+
+      <h3>Medicines to Dispense</h3>
+
+      <table id="medicineTable">
+        <thead>
+          <tr>
+            
+            <th>Medicine</th>
+            <th>Batch No</th>
+            <th>Quantity</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody id="medicineRows">
+          <!-- Medicine rows will be added dynamically -->
+        </tbody>
+      </table>
+
+      <button type="button" id="addRowBtn">Add Medicine</button>
+      <button type="submit">Dispense Medicines</button>
+    </form>
+  </div>
+
+  <!-- Current Stock Search and Filter Form -->
+  <div class="form-wrapper">
+    <form id="stockForm">
+      <h2 style="text-align: center ; font-size: 30px">Current Stock</h2>
+
+      <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; margin-top: 10px;">
+        <div>
+          <label for="searchMedicine" style="display:block; font-weight:bold; margin-bottom:5px;">Search Medicine</label>
+          <input 
+            type="text" 
+            id="searchMedicine" 
+            name="searchMedicine"
+            placeholder="Enter medicine name..." 
+            style="padding: 5px; width: 220px; height: 35px;"
+          >
+        </div>
+
+        <div>
+          <label for="expiryFilter" style="display:block; font-weight:bold; margin-bottom:5px;">Filter by Expiry</label>
+          <select 
+            id="expiryFilter" 
+            name="expiryFilter"
+            style="padding: 5px; width: 220px; height: 35px;"
+          >
+            <option value="all">All</option>
+            <option value="red">Expiring within 1 Month (Red)</option>
+            <option value="orange">Expiring within 3 Months (Orange)</option>
+          </select>
+        </div>
+      </div>
+
+      <table id="stockTable">
+        <thead>
+          <tr>
+            <th>Medicine ID</th>
+            <th>Medicine</th>
+            <th>Batch No</th>
+            <th>Expiry Date</th>
+            <th>Current Stock</th>
+          </tr>
+        </thead>
+        <tbody id="stockBody"></tbody>
+      </table>
+    </form>
+  </div>
+
+  <script src="pharmacy_inside.js"></script>
+</body>
+</html>

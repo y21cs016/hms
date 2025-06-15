@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Pathology</title>
+    <link rel="stylesheet" href="pathology.css">
+    <script src="pathology.js" defer></script>
+</head>
+<!-- Image Button for Navigation -->
+<a href="doctor.html" class="back-button">
+    <img src="back_image.png" alt="Back to Doctor Page" class="back-icon">
+</a>
+
+<body>
+    <h1>Pathology Form</h1>
+
+    <div class="patient-info" id="patientInfo"></div>
+
+    <form id="pathologyForm">
+        <label><b>Select Tests:</b></label><br>
+        <div class="checkbox-group">
+            <div><input type="checkbox" id="blood" name="tests" value="Blood Test"><label for="blood">Blood Test</label></div>
+            <div><input type="checkbox" id="xray" name="tests" value="X-Ray"><label for="xray">X-Ray</label></div>
+            <div><input type="checkbox" id="mri" name="tests" value="MRI"><label for="mri">MRI</label></div>
+            <div><input type="checkbox" id="ct" name="tests" value="CT Scan"><label for="ct">CT Scan</label></div>
+            <div><input type="checkbox" id="ecg" name="tests" value="ECG"><label for="ecg">ECG</label></div>
+            <div><input type="checkbox" id="sugar" name="tests" value="Sugar Test"><label for="sugar">Sugar Test</label></div>
+            <div><input type="checkbox" id="lipid" name="tests" value="Lipid Profile"><label for="lipid">Lipid Profile</label></div>
+            <div><input type="checkbox" id="liver" name="tests" value="Liver Function Test"><label for="liver">Liver Function Test</label></div>
+            <div><input type="checkbox" id="thyroid" name="tests" value="Thyroid"><label for="thyroid">Thyroid</label></div>
+            <div><input type="checkbox" id="hb" name="tests" value="Hemoglobin"><label for="hb">Hemoglobin</label></div>
+            <div><input type="checkbox" id="mammo" name="tests" value="Mammography"><label for="mammo">Mammography</label></div>
+            <div><input type="checkbox" id="hcg" name="tests" value="Beta HCG"><label for="hcg">Beta HCG</label></div>
+            <div><input type="checkbox" id="preg" name="tests" value="Pregnancy"><label for="preg">Pregnancy</label></div>
+            <div><input type="checkbox" id="urine" name="tests" value="Urine Test"><label for="urine">Urine Test</label></div>
+
+        </div>
+
+        <label for="remarks">Remarks:</label><br>
+        <textarea id="remarks" name="remarks" rows="4" cols="50" placeholder="Enter any remarks here..."></textarea><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="responseMsg"></div>
+</body>
+</html>

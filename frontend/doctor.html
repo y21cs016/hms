@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPD Patient List</title>
+    <link rel="stylesheet" href="doctor.css">
+    <script src="doctors.js" defer></script>
+    <h1>OPD Patient List</h1>
+</head>
+    <div class="search-container">
+        <div class="search-group">
+            <label for="searchUqid">UQID</label>
+            <input type="text" id="searchUqid" placeholder="Enter uqid">
+        </div>
+    
+        <div class="search-group">
+            <label for="searchPatient">Patient Name</label>
+            <input type="text" id="searchPatient" placeholder="enter patient name">
+        </div>
+    
+        <div class="search-group">
+            <label for="searchSpecialist">Disease</label>
+            <input type="text" id="searchSpecialist" placeholder="enter disease">
+        </div>
+    
+        <div class="search-group">
+            <label for="searchDoctor">Doctor Name</label>
+            <input type="text" id="searchDoctor" placeholder="enter doctor name">
+        </div>
+    
+        <div class="search-group">
+            <label for="fromDate">From</label>
+            <input type="date" id="fromDate">
+        </div>
+    
+        <div class="search-group">
+            <label for="toDate">To</label>
+            <input type="date" id="toDate">
+        </div>
+    
+        <div class="search-group">
+                <button id="refreshBtn" onclick="location.reload()" class="action-btn">Refresh</button>
+        </div>
+    </div>
+    
+        <!-- 📋 Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>UQID</th>
+                    <th>Name</th>
+                    <th>Disease</th>
+                    <th>Doctor</th>
+                    <th>Department</th>
+                    <th>Company Status</th>
+                    <th>Company ID</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Dynamic content here -->
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    function editPathology(uqid) {
+    window.location.href = `pathology.html?uqid=${uqid}&mode=edit`;
+}
+
+    </script>
+    
+</html>

@@ -1,0 +1,121 @@
+/* Powder Blue Background */
+body {
+    background-color: #b0e0e6;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    
+    
+}
+
+/* Container Styling */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Logout Button */
+.logout {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Form Styling */
+form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+}
+
+/* Input, Select, Textarea with Colored Borders */
+input, select, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    width: 100%;
+
+}
+/* Label Styling */
+label {
+    width: 150px;
+    font-weight: 700;
+    color: #333;
+
+}
+/* Age Section - Inline Inputs */
+.age-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* Radio Button Group - Correct Alignment */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* File Input */
+input[type="file"] {
+    padding: 4px;
+}
+
+/* Button Container for Submit and Refresh */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: #2ecc71; /* Green */
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Refresh Button */
+.refresh {
+    background-color: #b0e0e6; /* Powder Blue */
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover, .refresh:hover {
+    background-color: #217dbb;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .age-group {
+        flex-direction: column;
+    }
+}

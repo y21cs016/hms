@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>OPD Booking</title>
+    <link rel="stylesheet" href="opd-patient.css">
+</head>
+
+<body>
+    <h1>OPD Booking</h1>
+
+    <!-- Search and Input Section -->
+    <div class="form-group">
+        <!-- Row 1: Name & UQID -->
+        <div class="form-row">
+            <div class="input-box">
+                <label for="searchPatient">Name</label>
+                <input type="text" id="searchPatient" placeholder="Enter patient name">
+            </div>
+    
+            <div class="input-box">
+                <label for="searchUqid">UQID</label>
+                <input type="text" id="searchUqid" placeholder="Enter UQID">
+            </div>
+        </div>
+    
+        <!-- Row 2: Phone, From, To, Refresh -->
+        <div class="form-row">
+            <div class="input-box">
+                <label for="searchPhone">Phone</label>
+                <input type="text" id="searchPhone" placeholder="Enter phone number">
+            </div>
+    
+            <div class="input-box">
+                <label for="fromDate">From</label>
+                <input type="date" id="fromDate">
+            </div>
+    
+            <div class="input-box">
+                <label for="toDate">To</label>
+                <input type="date" id="toDate">
+            </div>
+    
+            <div class="input-box">
+                <button id="refreshBtn" onclick="location.reload()">Refresh</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="photo-actions-container">
+        <img src="download_logo.jpg" class="photo-icon" onclick="toggleButtons()" alt="Toggle Buttons">
+     <div  class="button-slide-panel" id="slideButtons">
+        <button onclick="exportPatientsByDateRange('excel')">Export as Excel</button>
+        <button onclick="exportPatientsByDateRange('csv')">Export as CSV</button>
+        <button onclick="exportPatientsByDateRange('pdf')">Export as PDF</button>
+     </div>
+    </div>
+    
+
+    <!-- Patient Data Table -->
+    <div id="patientTableContainer">
+        <table id="patientTable">
+            <thead>
+                <tr>
+                    <th>UQID</th>
+                    <th>Patient Name</th>
+                    <th>Phone Number</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic rows will go here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- JS -->
+    <script src="opd-patient.js"></script>
+
+
+
+    <script>
+        function exportPatientsByDateRange(format) {
+            const from = document.getElementById("fromDate").value;
+            const to = document.getElementById("toDate").value;
+
+            if (!from || !to) {
+                alert("Please select both From and To dates.");
+                return;
+            }
+
+            // Replace the URL below with your backend route
+            const url = `http://localhost:3000/export-patients-range?from=${from}&to=${to}&format=${format}`;
+            window.location.href = url;
+        }
+        function toggleButtons() {
+      const panel = document.getElementById('slideButtons');
+      panel.classList.toggle('active');
+  }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            /* Header Styles */
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(to left, powderblue, #ffffff); /* Background color */
+                padding: 30px 30px;
+                display: flex;
+                align-items: center;
+                z-index: 1000;
+                border-bottom: 2.8 px solid #ddd; /* Optional border */
+                box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+            }
+    
+            .logo {
+                width: 65px; /* Adjust size */
+                height: auto;
+                margin-right: 15px;
+            }
+    
+            .hospital-details {
+                display: flex;
+                flex-direction: column;
+            }
+    
+            .hospital-name {
+                font-size: 30px;
+                font-weight: bold;
+                color: #1a237e;
+                text-transform: uppercase;
+            }
+    
+            .hospital-address, .hospital-contact {
+                font-size: 14px;
+                color: #555;
+            }
+            /* Lishi Details Styles (Top Right) */
+            .lishi-details {
+                margin-left: auto;
+                text-align: right;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .lishi-name {
+                font-size: 20px;
+                font-weight: bold;
+                color: #0d47a1;
+            }
+
+            .lishi-address, .lishi-contact {
+                font-size: 14px;
+                color: #555;
+            }
+
+            /* Header Transition */
+.header {
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideFade 0.6s ease forwards;
+}
+
+@keyframes slideFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+        </style>
+    </head>
+<body>
+<div class="header">
+    <img src="lloyds_infinite_foundation_logo.jpg" alt="Hospital Logo" class="logo">
+    <div class="hospital-details">
+        <span class="hospital-name">Lloyds Kali Ammal Memorial Hospital</span>
+        <span class="hospital-address">Hedri, Etapalli, Dist. Gadchiroli, Maharashtra, Pin-12345</span>
+        <span class="hospital-contact">Phone: 123456789 | Email: lloyds@gmail.com</span>
+    </div>
+    <div class="lishi-details">
+        <span class="lishi-name">Lishi Technologies</span>
+        <span class="lishi-address">Guntur, Andhra Pradesh</span>
+        <span class="lishi-contact">Phone: 9876543210 </span>
+        <span class="lishi-contact">Email: contact@lishi.com</span>
+    </div>
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm IPD</title>
+    <link rel="stylesheet" href="confirm_ipd.css">
+</head>
+<body>
+    <h2>Confirm IPD Booking</h2>
+    <form id="confirmForm">
+        <label>UQID: <span id="uqid"></span></label><br>
+        <label>IPD ID: <span id="ipdId"></span></label><br>
+
+        <label>Patient Name: <span id="patientName"></span></label><br>
+        <label>Phone: <span id="phone"></span></label><br>
+        <label>Gender: <span id="gender"></span></label><br>
+        <label>Age: <span id="age"></span></label><br>
+        <label>Address: <span id="address"></span></label><br>
+
+        <label>Disease: <span id="disease"></span></label><br>
+        <label>Department: <span id="department"></span></label><br>
+        <label>Doctor: <span id="doctor"></span></label><br>
+        <label>Company Status: <span id="companyStatus"></span></label><br><br>
+
+        <label for="roomType">Room Type:</label>
+        <select id="roomType" name="roomType" required>
+            <option value="">-- Select Room Type --</option>
+            <option value="ICU">ICU</option>
+            <option value="Normal Ward">Normal Ward</option>
+            <option value="Maternity Ward">Maternity Ward</option>
+        </select><br>
+        
+        <label for="roomNo">Room No:</label>
+        <select id="roomNo" name="roomNo" required></select><br>
+        
+        <label for="bedNo">Bed No:</label>
+        <select id="bedNo" name="bedNo" required></select><br>
+        
+
+
+        <input type="submit" value="Confirm Booking">
+    </form>
+
+    <script src="confirm_ipd.js"></script>
+</body>
+</html>

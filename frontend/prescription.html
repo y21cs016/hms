@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription</title>
+    <script src="prescription.js" defer></script>
+    <link rel="stylesheet" href="prescription.css">
+</head>
+<!-- Image Button for Navigation -->
+<a href="doctor.html" class="back-button">
+  <img src="back_image.png" alt="Back to Doctor Page" class="back-icon">
+</a>
+
+<body>
+
+    <!-- Hospital Header with Logo -->
+    <div class="header">
+        <img src="lloyds_infinite_foundation_logo.jpg" alt="Hospital Logo" class="hospital-logo">
+        <div class="hospital-info">
+            <h1>LLOYDS KALI AMMAL MEMORIAL</h1>
+            <p><b>Hedri, 442704, Maharashtra</b><p>
+            <p> Email: llyods@hospital.com | Phone: +91-9876543210</p>
+        </div>
+    </div>
+
+    <!-- Prescription Container -->
+    <div class="container">
+        <h2 style="text-align: center;">Prescription</h2>
+
+
+        <div class="label-container">
+            <div><label>UQID:</label> <span id="uqid"></span></div>
+            <div><label>Patient Name:</label> <span id="name"></span></div>
+            <div><label>Phone Number:</label> <span id="phone"></span></div>
+            <div><label>Address:</label> <span id="address"></span></div>
+            <div><label>Marital Status:</label> <span id="marital_status"></span></div>
+            <div><label>Age:</label> <span id="age"></span></div>
+            <div><label>Gender:</label> <span id="gender"></span></div>
+            <div><label>Disease:</label> <span id="disease"></span></div>
+            <div><label>Department:</label> <span id="department"></span></div>
+            <div><label>Doctor:</label> <span id="doctor"></span></div>
+            <div><label>Company Status:</label> <span id="company_status"></span></div>
+        </div>
+ <!-- Dynamic Prescription Table -->
+ <h3>Prescription Details</h3>
+  <!-- Buttons -->
+<button id="addbtn" type="button" onclick="addPrescriptionRow()">Add Row</button>
+<button id="delbtn" type="button" onclick="deletePrescriptionRow()">Delete Row</button>
+ <table class="prescription-table" border="1" style="width: 100%; border-collapse: collapse;">
+   <thead>
+     <tr>
+        <th>S.No</th>
+       <th>Medicine</th>
+       <th>Type</th>
+       <th>Dose</th>
+       <th>Duration</th>
+       <th>Frequency</th>
+       <th>Advice</th>
+       
+     </tr>
+   </thead>
+   <tbody id="prescription-body">
+     <!-- Initial row with input fields -->
+     <tr>
+        <td>1</td>
+       <td><input type="text" name="medicine"></td>
+       <td><input type="text" name="type"></td>
+       <td><input type="text" name="dose"></td>
+       <td><input type="text" name="duration"></td>
+       <td><input type="text" name="frequency"></td>
+       <td><input type="text" name="advice"></td>
+      
+     </tr>
+   </tbody>
+ </table>
+
+    <button class ="prescription-btns" type="button" onclick="savePrescription()">Save Prescription</button>
+        <!-- Print Button -->
+        <button class="print-btn" onclick="printPrescription()">Print</button>
+    </div>
+
+    <!-- Watermark -->
+    <div class="watermark">LLOYDS KALI AMMAL MEMORIAL</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard - Hospital Management System</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<div id="header-container"></div>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header-container').innerHTML = data);
+</script>
+
+<body>
+    <div class="container">
+        <header>Welcome to the Hospital Dashboard</header>
+
+        <div class="grid">
+            <button onclick="location.href='new-patient.html'">New Patient</button>
+            <a href="patients.html" class="card">Patients</a>
+            <button onclick="location.href='doctor.html'">Doctor</button>
+            
+            <a href="opd-patient.html" class="card">OPD Booking</a>
+            <a href="ipd-booking.html" class="card">IPD Booking</a>
+            <a href="medicine.html" class="card">Medicine</a>
+        </div>
+    </div>
+    
+
+    
+    
+    
+</body>
+
+</html>

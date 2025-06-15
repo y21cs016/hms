@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: powderblue;
+}
+
+#reportForm {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section {
+    border: 1px solid black;
+    padding: 12px;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 1);
+    page-break-inside: avoid; /* Prevent section breaks when printing */
+}
+
+.section h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+.fields-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 30px;
+    margin-top: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.input-group input {
+    padding: 9px;
+    border: 1px solid #0c0c0c;
+    border-radius: 4px;
+}
+
+h1 {
+    color: #06325e;
+    margin-top: 0;
+}
+
+#submitBtn ,
+#printBtn{
+    padding: 10px 20px;
+    background: green;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+
+#submitBtn:hover {
+    background: darkgreen;
+}
+
+.main-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.patient-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 40px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.patient-grid p {
+    margin: 3px 0;
+}
+
+/* ----------- PRINT STYLING ----------- */
+@media print {
+    input[type="text"] {
+        border: none;
+        outline: none;
+        background: none;
+        font-weight: normal;
+        font-size: 15px;
+        padding: 0;
+        margin: 0;
+        width: auto;
+    }
+
+    label {
+        font-weight: bold;
+        margin-right: 6px;
+    }
+
+    .input-group {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 5px;
+    }
+
+    .fields-grid {
+        display: block;
+    }
+
+    .section {
+        border: none;
+        box-shadow: none;
+        background: none;
+        padding: 4px 0;
+        margin-bottom: 10px;
+    }
+
+    #submitBtn
+     {
+        display: none;
+    }
+
+    h1 {
+        text-align: center;
+    }
+}
+.print-header {
+    text-align: center;
+    margin-bottom: 20px;
+    display: none;
+}
+
+@media print {
+    .print-header {
+        display: block;
+    }
+
+    hr {
+        border: 1px solid black;
+        margin-top: 10px;
+    }
+}
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>New Patient Registration</title>
+    <link rel="stylesheet" href="new-patient.css">
+</head>
+
+
+
+
+<body>
+    
+    <div class="container">
+        <header>New Patient Registration
+            <button class="logout" onclick="logout()">Logout</button>
+        </header>
+
+        <form id="newPatientForm">
+            <!-- Title -->
+            <label for="title">Title:</label>
+            <select id="title" name="title" required>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Baby">Baby</option>
+            </select>
+
+            <!-- Name -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter full name" required>
+
+            <!-- Phone Number -->
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" pattern="^\+?[1-9]\d{1,14}$" required title="Please enter a valid phone number">
+
+
+            <!-- Address -->
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" placeholder="Enter address" required></textarea>
+
+            <!-- Marital Status -->
+            <label>Marital Status:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="maritalStatus" value="Married" required> Married</label>
+                <label><input type="radio" name="maritalStatus" value="Unmarried" required> Unmarried</label>
+            </div>
+
+            <!-- Age Section -->
+            <label for="ageY">Age:</label>
+            <div class="age-group">
+                <input type="number" id="ageY" name="ageY" placeholder="Years" required>
+                <input type="number" id="ageM" name="ageM" placeholder="Months">
+                <input type="number" id="ageD" name="ageD" placeholder="Days">
+            </div>
+
+            <!-- Gender -->
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label>Capture Photo:</label>
+                <div class="camera-section">
+                <video id="cameraFeed" autoplay playsinline width="132" height="170" style="border:2px solid black;"></video>
+                <canvas id="photoCanvas" width="132" height="170" style="display:none;"></canvas>
+                <img id="capturedImage" alt="Captured Photo" style="width:132px; height:170px; border:2px solid black; display:none;" />
+                <input type="hidden" id="photoData" name="photo">
+            <div class="camera-buttons">
+        <button type="button" onclick="startCamera()">Start Camera</button>
+        <button type="button" onclick="capturePhoto()">Capture Photo</button>
+    </div>
+</div>
+
+            <!-- Buttons -->
+            <div class="button-container">
+                <button type="button" class="refresh" onclick="refreshForm()">Refresh</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Linking the external script -->
+    <script src="script1.js"></script>
+    <script src="new-patient.js"></script>
+    
+    
+
+</body>
+</html>
